@@ -1,0 +1,172 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<script src="js.js"></script>
+</head>
+<body>
+
+	<form>
+		<div id ="idNum"></div>
+		<div id="inputForm">
+
+	
+
+		<table id="inputTable">
+			<tr>
+				<td>
+					<div class="dataInput">Model</div>
+				</td>
+
+				<td>
+					<select name="model" id="model" >
+						
+			  			<option value="iPhone 4">iPhone 4</option>
+			  			<option value="iPhone 4S">iPhone 4S</option>
+			  			<option value="iPhone 5">iPhone 5</option>
+			  			<option value="iPhone 5C">iPhone 5C</option>
+			  			<option value="iPhone 5S">iPhone 5S</option>
+			  			<option value="iPhone 6">iPhone 6</option>
+			  			<option value="iPhone 6+">iPhone 6+</option>
+			  			<option value="iPhone 6S">iPhone 6S</option>
+			  			<option value="iPhone 6S+">iPhone 6S+</option>
+			  			<option value="Samsung Galaxy S3">Samsung Galaxy S3</option>
+			  			<option value="Samsung Galaxy S4">Samsung Galaxy S4</option>			  			
+			  			<option value="Samsung Galaxy S5">Samsung Galaxy S5</option>
+			  			<option value="Samsung S5 Active">Samsung S5 Active</option>
+			  			<option value="Samsung Galaxy S6">Samsung Galaxy S6</option>
+			  			<option value="Samsung S6 Active">Samsung S6 Active</option>
+			  			<option value="Samsung S6 Edge">Samsung S6 Edge</option>
+			  			<option value="Samsung S6 Edge+">Samsung S6 Edge+</option>
+			  			<option value="Samsung Galaxy S7">Samsung Galaxy S7</option>
+			  			<option value="Samsung S7 Edge">Samsung S7 Edge</option>
+			  			<option value="Samsung Note 3">Samsung Note 3</option>
+			  			<option value="Samsung Note 4">Samsung Note 4</option>
+			  			<option value="Samsung Note 5">Samsung Note 5</option>
+			  			<option value="iPad 2">iPad 2</option>
+			  			<option value="iPad 3">iPad 3</option>
+			  			<option value="iPad 4">iPad 4</option>
+			  			<option value="iPad Air 2">iPad Air 2</option>
+			  			<option value="iPad Air 3">iPad Air 3</option>
+			  			<option value="iPad Mini">iPad Mini</option>
+			  			<option value="iPad Mini 2">iPad Mini 2</option>
+			  			<option value="iPad Mini 3">iPad Mini 3</option>
+			  			
+
+			  			
+			  			
+
+			  			
+
+			  		</select>
+
+				</td>
+
+				<td>
+					 <div id="custom">Custom<input type="checkbox" id="customModelCB" name="custom" value="Custom" onClick="customEdit('customModelCB', 'customModelTB')"></div>
+
+				</td>
+
+				<td>
+					 <input type="textbox" id="customModelTB" style="display:none">
+
+				</td>
+
+			</tr>
+
+			<tr>
+				<td>
+					<div class="dataInput">Size</div> 
+
+				</td>
+
+				<td>
+					<select name="size" id="size" >
+						<option value="8GB">8GB</option>
+						<option value="16GB">16GB</option>
+						<option value="32GB">32GB</option>
+						<option value="64GB">64GB</option>
+						<option value="128GB">128GB</option>
+						
+			  		</select>
+				</td>
+
+				<td>
+					 <div id="custom">Custom<input type="checkbox" id="customSizeCB" name="custom" value="Custom" onClick="customEdit('customSizeCB', 'customSizeTB')"></div>
+
+				</td>
+
+				<td>
+					 <input type="textbox" id="customSizeTB" style="display:none">
+
+				</td>
+
+			</tr>
+
+			<tr>
+				<td>
+					<div class="dataInput">Carrier</div> 
+
+				</td>
+
+				<td>
+					<select name="carier" id="carrier" >
+						<option value="Att">Att</option>
+						<option value="Sprint">Sprint</option>
+			  			<option value="Tmobile">Tmobile</option>
+			  			<option value="Verizon">Verizon</option>
+			  			<option value="Unlocked">Unlocked</option>
+			  			<option value="Att UL">Att UL</option>						
+			  			<option value="Tmobile UL">Tmobile UL</option>
+			  			<option value="Verizon UL">Verizon UL</option>
+			  			<option value="WIFI Only">WIFI Only</option>
+			  		</select>
+				</td>
+
+				<td>
+					 <div id="custom">Custom<input type="checkbox" id="customCarrierCB" name="custom" value="Custom" onClick="customEdit('customCarrierCB','customCarrierTB')"></div>
+
+				</td>
+
+				<td>
+					 <input type="textbox" id="customCarrierTB" style="display:none">
+
+				</td>
+
+			</tr>
+
+			<tr>
+				<td>
+					<div class="dataInput">Price </div>
+				</td>
+
+				<td>
+					
+					<input type="textbox" id="price">
+				</td>
+
+			</tr>
+
+			<tr>
+				<td>
+					<div class="dataInput">Sku# </div>
+				</td>
+
+				<td>
+					<input type="textbox" id="sku">
+				</td>
+
+			</tr>
+
+			
+
+		</table>
+		<br>
+
+
+		<input type="button" id="submit" value="Submit" onClick="getData();">
+		
+	</form\>
+
+
+</body>
+</html>

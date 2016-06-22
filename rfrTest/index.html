@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<title>Phone Buying Form</title>
+	  
+	  	<link rel="stylesheet" type="text/css" href="style.css">
+	  	<script type="text/javascript" src="js.js"></script>
+	  	<script type="text/javascript" src="ajax.js"></script>
+	  	<script type="text/javascript" src="data.js"></script>
+
+	  	<script>
+  	function displayDate() {
+		
+		var now = new Date();
+		var day = ("0" + now.getDate()).slice(-2);
+		var month = ("0" + (now.getMonth() + 1)).slice(-2);
+		var today =  (month) + "/" + (day) + "/" + now.getFullYear();
+		document.getElementById("date").value = today;
+	}
+
+
+  </script>
+
+	</head>
+
+	 
+	<body>
+		<!-- <video id="video" width="300" height="200" autoplay style="float:right;"></video> -->
+		
+		
+   
+
+		
+
+		
+	<!-- 	<div style="float: right;  margin-top: 10px;">			
+		<canvas id="canvas" width="300" height="200"></canvas>
+		</div> -->
+   
+
+	<div>
+	
+			<canvas id="canvas" width="300" height="200" style="float:right"></canvas>
+
+	<div style="float:left">	
+		<h2>Phone Buying Form</h2>
+		
+		<table >
+			<tr>
+				<td>
+					Receipt Number
+				</td>
+				<td>
+					<input type="text" id="receiptNumber">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Amount Paid
+				</td>
+				<td>
+					<input type="text" id="amountPaid">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					SKU
+				</td>
+				<td>
+					<input type="text" id="sku">
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					Buyers Check Number
+				</td>
+				<td>
+					<input type="text" id="buyersCheckNumber" onkeypress="handle(event)">
+				</td>
+			</tr>
+		</table>
+	</div>
+	</div>
+
+	<div style="clear:both"></div>
+
+
+		
+
+		<h4>Buyer Info</h4>
+		
+		<table id="buyerInfo">
+			<tr>
+				<td>
+					Date
+				</td>
+				<td>
+					<input type="text" id="date" size="35">
+				</td>
+				<tr>
+				<td>
+					Password
+				</td>
+				<td>
+					<input type="text" id="password" autofocus>
+				</td>
+			</tr>					
+			<tr>
+				<td>
+					Address
+				</td>
+				<td>
+					<input type="text" id="address">
+				</td>
+				<tr>
+				<td>
+					PhoneNumber
+				</td>
+				<td>
+					<input type="text" id="phoneNumber">
+				</td>						
+			</tr>
+			<tr>
+				<td>
+					Offer
+				</td>
+				<td>
+					<input type="text" id="offer">
+				</td>
+				<tr>
+				<td>
+					Buyer
+				</td>
+				<td>
+					<input type="text" id="buyer">
+				</td>					
+			</tr>
+
+			<tr>
+				<td>
+					DL#
+				</td>
+				<td>
+					<input type="text" id="dlNumber">
+				</td>
+
+									
+			</tr>
+		</table>
+		<!-- <div id="box"></div> -->
+		
+
+
+
+		<div>
+		<div style="float:left">
+			<h4>PhoneInfo</h4>
+			<table >
+				<tr>
+					<td>
+						Item Purchased
+					</td>
+					<td>
+						<input type="text" id="itemPurchased" size="35">
+					</td>
+				</tr>	
+				<tr>
+					<td>
+						Model
+					</td>
+					<td>
+					<input type="text" id="model">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Carrier
+					</td>
+					<td>
+						<input type="text" id="carrier">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						ESN
+					</td>
+					<td>
+						<input type="text" id="esn">
+					</td>
+				</tr>
+			</table>
+		</div>	
+		<div style="float:right">	
+			<h4>Test Phone</h4>
+			<table>	
+				<tr>
+					<td>
+						ESN Clear				
+						Yes<input type="checkBox" id="clearYes">
+						No<input type="checkBox" id="clearNo">	
+					</td>
+					<td>
+						iCloud Clear<input type="checkBox" id="iCloudClearCheck">
+					</td>
+								
+				</tr>
+				
+				<tr>
+					<td>
+						Test Digitizer<input type="checkBox" id="testDigitizer">
+					</td>
+					<td>
+						Home Button<input type="checkBox" id="homeButton">
+					</td>
+					
+				</tr>
+				
+				<tr>	
+					<td>
+						Power Button<input type="checkBox" id="powerButton">
+					</td>
+					<td>
+						Mute Button<input type="checkBox" id="muteButton">	
+					</td>
+
+					
+				</tr>
+			
+
+				<tr>	
+					<td>
+						Sound<input type="checkBox" id="sound">	
+					</td>	
+					<td>
+						Camera<input type="checkBox" id="camera">	
+					</td>
+								
+				</tr>
+
+			
+
+				<tr>	
+					<td>
+						Battery Test<input type="checkBox" id="test">	
+					</td>
+					<td>
+						Charge Port<input type="checkBox" id="port">	
+					</td>		
+								
+				</tr>				
+
+				<tr>
+					<td>
+						Working
+						Yes<input type="checkBox" id="workingYes">
+						No<input type="checkBox" id="workingNo">	
+					</td>
+
+					<td>
+						RFR<input type="checkBox" id="clearYes">
+						Parts<input type="checkBox" id="clearYes">
+					</td>
+				</tr>	
+
+				<tr>
+					<td colspan="2">
+						Visual Diag
+					</td>
+
+
+				</tr>
+			</table>	
+		</div>
+	</div>
+		<div style="clear:both"></div>	
+			<div style="clear"></div>	
+			<input class="buttons" type="button" value="New" onClick="reload()">
+			<input class="buttons" type="button" value="Save" onClick="saveData()">
+
+			<input class="buttons" type="button" value="Load" onClick="loadData()">
+			<input class="buttons" type="button" value="Print" onClick="printLabels()">
+
+
+			<div id="sellerSign">
+				<p>
+					I attest that the above item is sold legally to Compuzone for the documented price.
+					ALL SALES FINAL! Item becomes property of Compuzone after 7 days if not sold/picked up by seller.
+				</p>
+				
+
+				<h4>Sellers Signature____________________________________________________</h3>
+				
+				<h4>Date_______________________________________________________________</h3>
+			</div>	
+				
+
+
+			
+			
+	<script type="text/javascript">
+	window.onLoad = drawCanvasMessage();
+	window.onLoad = displayDate();
+	</script>	
+	<p hidden id="pic"></p>
+	<canvas id="canvasTest" width="300" height="200" style="float:right"></canvas>
+	</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

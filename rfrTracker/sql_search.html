@@ -1,0 +1,116 @@
+<html>
+<head>
+	
+	<script src="ajax.js"></script>
+
+	<script>
+		  function enterPressed(e){
+        if(e.keyCode === 13){
+            loadData();
+        }
+
+        return false;
+    }
+    </script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+</head>
+<body>
+
+<form>
+
+
+<table name="output" bgcolor="#ccffee" border="1" cellpadding="10">
+
+
+
+
+<tr>
+	<td>Receipt #</td>
+	<td>Store Purchased From</td>
+	<td>Date Purchased</td>
+	<td>Store Transfered To</td>
+	<td>Date Transfered</td>
+	<td>Store Received </td>
+	<td>Date Received </td>
+	<td>RFR Or Parts</td>
+	<td>Date RFR Or Parts</td>
+	<td>SKU#</td>
+</tr>
+
+
+
+<tr>
+	<td><input type="text" name="output_receipt" id="output_receipt" onkeypress="enterPressed(event, this.value)"></td>
+		
+	<td>
+		<select name="output_store_purchased" id="output_store_purchased" onchange="setDate('output_date_purchased')">
+			<option value=""></option>
+  			<option value="WSY">WSY</option>
+  			<option value="Belton">Belton</option>
+  			<option value="Elms">Elms</option>
+  		</select>
+	</td>
+	
+	<td><input type="text" name="output_date_purchased" id="output_date_purchased"></td>
+	
+	<td>
+		<select name="output_transfered_to" id="output_transfered_to" onchange="setDate('output_date_transfered')">
+			<option value=""></option>
+  			<option value="WSY">WSY</option>
+  			<option value="Belton">Belton</option>
+  			<option value="Elms">Elms</option>
+  		</select>
+	</td>
+	
+	<td><input type="text" name="output_date_transfered" id="output_date_transfered"></td>
+	
+	<td>
+		<select name="output_received" id="output_received" onchange="setDate('output_date_received')">
+			<option value=""></option>
+  			<option value="WSY">WSY</option>
+  			<option value="Belton">Belton</option>
+  			<option value="Elms">Elms</option>
+  		</select>
+	</td>
+	
+	<td><input type="text" name="output_date_received" id="output_date_received"></td>
+	
+	<td>
+		<select name="output_rfr_or_parts" id="output_rfr_or_parts" onchange="setDate('output_date_rfr_or_parts')">
+			<option value=""></option>
+  			<option value="RFR">RFR</option>
+  			<option value="Parts">Parts</option>
+   		</select>
+	</td>
+	
+	<td><input type="text" name="output_date_rfr_or_parts" id="output_date_rfr_or_parts"></td>
+	
+	<td><input type="text" name="output_sku" id="output_sku"></td>
+	
+	
+	
+</tr>
+
+</table>
+
+<input type="text" name="receipt2" id="receipt2" > <br>
+<input type="text" name="change" id="change" > <br>
+
+
+
+<input type="button" value="Find" onClick="getValues()">
+<input type="button" name ="submit" value="check for entry" onclick="checkForEntry()">
+
+<input type="button" name ="test" value="check for bol" onclick="checkForEntry()">
+
+<input type="button" name ="save" value="save" onclick="saveData()">
+
+</form>
+<br>
+<div id="txtHint"><b>Person info will be listed here...</b></div>
+
+<div id="p1"><b></b></div>
+<br>
+<div id="p2"><b></b></div>
+</body>
+</html>

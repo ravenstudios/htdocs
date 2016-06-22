@@ -1,0 +1,79 @@
+body{
+
+	margin-left:9px; 
+	margin-top:9px;padding:0;
+}
+
+.label{
+	width:310px;
+	height:58px;border:1px solid #000;
+	text-align:center;
+	float:left;
+}
+
+.mid{
+	width:44px;
+	height:58px;border:1px solid #000;
+	float:left
+}
+
+.clear{
+
+	clear:both;
+}	
+
+.elm1{
+
+	float:left;
+	font-size: 12pt;
+}
+
+.elm2{
+
+	display: inline-block;
+	font-size: 12pt;
+}
+
+.elm3{
+
+	float:right;
+	font-size: 12pt;
+}
+
+.elm4{
+
+	float:left;
+	font-size: 12pt;
+}
+
+.elm5{
+
+	display: inline-block;
+	font-size: 12pt;
+}
+
+.elm6{
+
+	float:right;
+	font-size: 12pt;
+}
+
+.dataInput{
+
+
+}
+
+.input{
+
+	padding-left: 20px;
+}
+
+#inputForm{
+	/*visibility: hidden;*/
+
+}
+
+#inputTable{
+
+
+}

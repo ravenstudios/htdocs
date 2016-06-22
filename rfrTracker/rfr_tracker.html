@@ -1,0 +1,167 @@
+<html>
+<head>
+<title>RFR Tracker</title>
+
+<script src="get_date.js"></script>
+	
+</head>
+<body>
+	
+<form name="rfr_tracker_form" action="mysql_con.php" method="post">
+
+		<!--INPUT TABLE-->
+<table name="input" bgcolor="##cfe8ef" border="1" cellpadding="10">
+<tr>
+	<td>Receipt #</td>
+	<td>Store Purchased From</td>
+	<td>Store Transfered To</td>
+	<td>Store Received </td>
+	<td>RFR Or Parts</td>
+	<td>SKU#</td>
+	<td>Date</td>
+</tr>
+
+<tr>
+	<td><input type="text" name="inpur_receipt" id="inpur_receipt"></td>
+	
+	
+	
+	<td>
+		<select name="input_store_purchesed" id="input_store_purchesed" >
+			<option value=""></option>
+  			<option value="WSY">WSY</option>
+  			<option value="Belton">Belton</option>
+  			<option value="Elms">Elms</option>
+  		</select>
+	</td>
+	
+	
+	
+	<td>
+		<select name="input_store_transfered" id="input_store_transfered">
+			<option value=""></option>
+  			<option value="WSY">WSY</option>
+  			<option value="Belton">Belton</option>
+  			<option value="Elms">Elms</option>
+  		</select>
+	</td>
+	
+	
+	
+	<td>
+		<select name="input_store_received" id="input_store_received">
+			<option value=""></option>
+  			<option value="WSY">WSY</option>
+  			<option value="Belton">Belton</option>
+  			<option value="Elms">Elms</option>
+  		</select>
+	</td>
+	
+	<td>
+		<select name="input_rfr_or_parts" id="input_rfr_or_parts">
+			<option value=""></option>
+  			<option value="RFR">RFR</option>
+  			<option value="Parts">Parts</option>
+   		</select>
+	</td>
+	
+	<td><input type="text" name="input_sku" id="input_sku"></td>
+	<td><input type="text" name="input_date" id="input_date"></td>
+	
+	
+</tr>
+
+</table>
+
+<br></br>
+		<!--OUTPUT TABLE-->
+<table name="output" bgcolor="#ccffee" border="1" cellpadding="10">
+
+
+
+
+<tr>
+	<td>Receipt #</td>
+	<td>Store Purchased From</td>
+	<td>Date Purchased</td>
+	<td>Store Transfered To</td>
+	<td>Date Transfered</td>
+	<td>Store Received </td>
+	<td>Date Received </td>
+	<td>RFR Or Parts</td>
+	<td>Date RFR Or Parts</td>
+	<td>SKU#</td>
+</tr>
+
+
+
+<tr>
+	<td><input type="text" name="output_receipt" id="output_receipt"></td>
+		
+	<td>
+		<select name="output_store_purchased" id="output_store_purchased" >
+			<option value=""></option>
+  			<option value="WSY">WSY</option>
+  			<option value="Belton">Belton</option>
+  			<option value="Elms">Elms</option>
+  		</select>
+	</td>
+	
+	<td><input type="text" name="output_date_purchased" id="output_date_purchased"></td>
+	
+	<td>
+		<select name="output_transfered_to" id="output_transfered_to">
+			<option value=""></option>
+  			<option value="WSY">WSY</option>
+  			<option value="Belton">Belton</option>
+  			<option value="Elms">Elms</option>
+  		</select>
+	</td>
+	
+	<td><input type="text" name="output_date_transfered" id="output_date_transfered"></td>
+	
+	<td>
+		<select name="output_received" id="output_received">
+			<option value=""></option>
+  			<option value="WSY">WSY</option>
+  			<option value="Belton">Belton</option>
+  			<option value="Elms">Elms</option>
+  		</select>
+	</td>
+	
+	<td><input type="text" name="output_date_received" id="output_date_received"></td>
+	
+	<td>
+		<select name="output_rfr_or_parts" id="output_rfr_or_parts">
+			<option value=""></option>
+  			<option value="RFR">RFR</option>
+  			<option value="Parts">Parts</option>
+   		</select>
+	</td>
+	
+	<td><input type="text" name="output_date_rfr_or_parts" id="output_date_rfr_or_parts"></td>
+	
+	<td><input type="text" name="output_sku" id="output_sku"></td>
+	
+	
+	
+</tr>
+
+</table>
+
+<input type="button" name="button" value="Button" onClick="displayDate();">
+
+<input type="submit">
+
+</form>
+
+<script> displayDate();</script>
+
+
+
+
+
+
+
+</body>
+</html>

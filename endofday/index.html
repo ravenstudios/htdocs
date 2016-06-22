@@ -1,0 +1,236 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+
+
+  <title>End Of Day Numbers</title>
+  <meta name="description" content="End Of Day Numbers">
+  
+
+  <script src="ajax.js"></script>
+<script src="eom.js"></script>
+  <script>
+  	function displayDate() {
+		
+		var now = new Date();
+		var day = ("0" + now.getDate()).slice(-2);
+		var month = ("0" + (now.getMonth() + 1)).slice(-2);
+		var today =  (month) + "/" + (day) + "/" + now.getFullYear();
+		document.getElementById("date").value = today;
+	}
+
+
+  </script>
+
+  
+
+  // <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+  
+
+  
+</head>
+
+<body>
+	<img src="http://www.compuzoneonline.com/images/compuzone_logo.jpg" alt="CompuZone logo" width="268" height="76"><br />
+    
+   <h2> End of Day Numbers</h2>
+	<form name="form">
+		<table name="output"  border="1" cellpadding="10" style="font-family: Tahoma, Geneva, sans-serif; font-size: 14px;">
+			<tr style="font-weight: bold; color: #FFF;">
+				<td bgcolor="#FF0000">
+					Store
+				</td>
+				<td bgcolor="#000099">
+					Cash
+			  </td>
+
+				<td bgcolor="#000099">
+					Sales
+				</td>
+
+				<td bgcolor="#000099">
+					Date
+				</td>
+			</tr>
+
+			<td bgcolor="#FFFFFF">
+				<select name="store" id="store" >
+					<option value=""></option>
+		  			<option value="WSY">WSY</option>
+		  			<option value="Belton">BTN</option>
+		  			<option value="Elms">ELM</option>
+		  		</select>
+		  	</td>
+		  	<td bgcolor="#FFFFFF">
+		  		<input type="textbox" id="cash" name="cash">
+
+		  	</td>	
+
+		  	<td bgcolor="#FFFFFF">
+		  		<input type="textbox" id="sales" name="sales">
+		  		
+		  	</td>
+
+		  	<td bgcolor="#FFFFFF">
+		  		<input type="textbox" id="date"  name="date" >
+		  		
+		  	</td>
+
+		  	
+				
+			<script>
+				displayDate();
+			</script>	
+				
+		</table>
+
+		<br>
+        <table>
+        	<tr>
+        		<td>
+        			<input type="button" onClick="sendNumbers()" value="Send Numbers">
+        		</td>
+        	</tr>
+
+        	<tr>
+        	</tr>
+        	<tr>
+        		<td>
+        			
+        			<input type="date" id="chooseDate">
+        		</td>
+
+        		<td>
+        			<input type="button" name="Search Old" value="Search Old "onClick="searchOld();">
+        		</td>
+
+        	</tr>
+       
+        
+		
+    	</table >
+    	<table>
+    		<tr>
+    			<td>
+		<table border="1" cellpadding="10" style="font-family: Tahoma, Geneva, sans-serif; font-size: 14px; ">
+			<tr style="font-weight: bold; color: #FFF;">
+				<th bgcolor="#FF0000">Store</th>
+				<th bgcolor="#000099">Cash</th>
+				<th bgcolor="#000099">Sales</th>
+			</tr>
+			<tr>
+				<td>WSY</td>
+				<td>
+					<div id="wsy_cash"></div>
+				</td>
+				<td>
+					<div id="wsy_sales"></div>
+				</td>
+			</tr>
+			<tr>
+				<td>Belton</td>
+				<td>
+					<div id="belton_cash"></div>
+				</td>
+				<td>
+					<div id="belton_sales"></div>
+				</td>
+			</tr>
+			<tr>
+				<td>Elms</td>
+				<td>
+					<div id="elms_cash"></div>
+				</td>
+				<td>
+					<div id="elms_sales"></div>
+				</td>
+			</tr>
+            <tr>
+    			<td>Totals</td>
+				<td>
+					<div id="total_cash"></div>
+				</td>
+				<td>
+					<div id="total_sales"></div>
+				</td>
+			</tr>
+		</table>		
+
+	</td>
+	<td>
+
+		<table border="1" cellpadding="10" style="font-family: Tahoma, Geneva, sans-serif; font-size: 14px; ">
+			<tr style="font-weight: bold; color: #FFF;">
+				<th bgcolor="#FF0000">Store</th>
+				<th bgcolor="#000099">Daily Average</th>
+				<th bgcolor="#000099">EOM Projection</th>
+			</tr>
+			<tr>
+				<td>WSY</td>
+				<td>
+					<div id="wsy_avg"></div>
+				</td>
+				<td>
+					<div id="wsy_eom"></div>
+				</td>
+			</tr>
+			<tr>
+				<td>Belton</td>
+				<td>
+					<div id="belton_avg"></div>
+				</td>
+				<td>
+					<div id="belton_eom"></div>
+				</td>
+			</tr>
+			<tr>
+				<td>Elms</td>
+				<td>
+					<div id="elms_avg"></div>
+				</td>
+				<td>
+					<div id="elms_eom"></div>
+				</td>
+			</tr>
+            <tr>
+    			<td>Totals</td>
+				<td>
+					<div id="total_avg"></div>
+				</td>
+				<td>
+					<div id="total_eom"></div>
+				</td>
+			</tr>
+		</table>		
+
+	</td>
+</tr>
+</table>
+		<script>loadData()</script>
+		
+
+		<input type="button" value="test" onClick="eom()">
+
+			
+
+		
+
+		
+		
+	 </form>
+
+
+</body>
+
+
+</html>
+
+
+
+
+
+

@@ -1,0 +1,24 @@
+body{
+    margin-top: 0px;
+}
+
+h1{
+	
+	border: 1px solid black;
+}
+#box{
+	border: 4px solid black;
+
+}
+table, td, tr{
+
+	border: 1px solid black
+}
+#mainInfo{
+
+	border: 1px solid black
+}
+#canvas{
+
+	border: 1px solid black
+}

@@ -1,0 +1,45 @@
+<html>
+
+	<head>
+	<script>
+		<?php
+		include(test.php);
+		?>
+	</script>
+	
+		<script>
+		
+			function getdata(){
+			
+				var text = document.getElementById("input").value;
+				document.getElementById("output").value = text;
+			}
+			
+			function SelectElement(){    
+    			var element = document.getElementById('output_store_purchased');
+    			valueToSelect = "Elms"
+   				element.value = valueToSelect;
+			}
+		</script>
+	</head>
+	
+	<body>
+		<form name="form" action="test.php" method="post">
+		<input type="text" name="input" id="input">
+		<input type="text" name="output" id="output">
+		<input type="button" name="button" value="button" onClick="prints();">
+		<br>
+		<select name="output_store_purchased" id="output_store_purchased" >
+			<option value=""></option>
+  			<option value="WSY">WSY</option>
+  			<option value="Belton">Belton</option>
+  			<option value="Elms">Elms</option>
+  		</select>
+		<br>
+		<input type="button" value="Find" onClick="SelectElement()">
+		<br>
+		
+		
+<input type="submit">
+	</body>
+</html>

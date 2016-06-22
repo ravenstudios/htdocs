@@ -1,0 +1,133 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+
+
+  <title>End Of Day Numbers</title>
+  <meta name="description" content="End Of Day Numbers">
+  
+
+  
+  <script>
+  	function displayDate() {
+		
+		var now = new Date();
+		var day = ("0" + now.getDate()).slice(-2);
+		var month = ("0" + (now.getMonth() + 1)).slice(-2);
+		var today =  (month) + "/" + (day) + "/" + now.getFullYear();
+		document.getElementById("date").value = today;
+	}
+
+
+  </script>
+
+  <script src="ajax.js"></script>
+  
+</head>
+
+<body>
+	<form name="end of days numbers" action="smtp.php" method="post">
+		<table name="output" bgcolor="#ccffee" border="1" cellpadding="10">
+			<tr>
+				<td>
+					Store
+				</td>
+				<td>
+					Cash
+				</td>
+
+				<td>
+					Sales
+				</td>
+
+				<td>
+					Date
+				</td>
+			</tr>
+
+			<td>
+				<select name="store" id="store" >
+					<option value=""></option>
+		  			<option value="WSY">WSY</option>
+		  			<option value="Belton">Belton</option>
+		  			<option value="Elms">Elms</option>
+		  		</select>
+		  	</td>
+		  	<td>
+		  		<input type="textbox" id="cash" name="cash">
+
+		  	</td>	
+
+		  	<td>
+		  		<input type="textbox" id="sales" name="sales">
+		  		
+		  	</td>
+
+		  	<td>
+		  		<input type="textbox" id="date" name="date" >
+		  		
+		  	</td>
+
+		  	
+				
+			<script>
+				displayDate();
+			</script>	
+				
+		</table>
+
+		<input type = "submit" name="run php" >
+
+		<br>
+		<br>
+
+
+		<table bgcolor="#ccffee" border="1" cellpadding="10">
+			<tr>
+				<th>Store</th>
+				<th>Cash</th>
+				<th>Sales</th>
+			</tr>
+			<tr>
+				<td>WSY</td>
+				<td>
+					<div id="wsy_cash"></div>
+				</td>
+				<td>
+					<div id="wsy_sales"></div>
+				</td>
+			</tr>
+			<tr>
+				<td>Belton</td>
+				<td>
+					<div id="belton_cash"></div>
+				</td>
+				<td>
+					<div id="belton_sales"></div>
+				</td>
+			</tr>
+			<tr>
+				<td>Elms</td>
+				<td>
+					<div id="elms_cash"></div>
+				</td>
+				<td>
+					<div id="elms_sales"></div>
+				</td>
+			</tr>
+		</table>		
+
+		<script>loadData();</script>
+
+			
+
+		
+
+		
+		
+	 </form>
+</body>
+</html>

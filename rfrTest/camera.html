@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="stuff, to, help, search, engines, not" name="keywords">
+<meta content="What this page is about." name="description">
+<meta content="Display Webcam Stream" name="title">
+<title>Display Webcam Stream</title>
+  
+<style>
+#container {
+    margin: 0px auto;
+    width: 500px;
+    height: 375px;
+    border: 10px #333 solid;
+}
+#videoElement {
+    width: 500px;
+    height: 375px;
+    background-color: #666;
+}
+</style>
+</head>
+  
+<body>
+
+    <video id="video" width="320" height="240" autoplay></video>
+<button id="snap">Snap Photo</button>
+<canvas id="canvas" width="320" height="240"></canvas>
+<button id="getBase" onclick="getBase()">Get Base64</button>
+<textarea id="textArea"></textarea>
+
+<script>
+
+    // Put event listeners into place
+    window.addEventListener("DOMContentLoaded", function() {
+        // Grab elements, create settings, etc.
+        var canvas = document.getElementById("canvas"),         
+        context = canvas.getContext("2d"),
+        video = document.getElementById("video"),
+        videoObj = { "video": true },
+        errBack = function(error) {
+        console.log("Video capture error: ", error.code); 
+        };
+
+        // Put video listeners into place
+        if(navigator.getUserMedia) { // Standard
+            navigator.getUserMedia(videoObj, function(stream) {
+                video.src = stream;
+                video.play();
+            }, errBack);
+        } else if(navigator.webkitGetUserMedia) { // WebKit-prefixed
+            navigator.webkitGetUserMedia(videoObj, function(stream){
+                video.src = window.webkitURL.createObjectURL(stream);
+                video.play();
+            }, errBack);
+        }
+
+        // Trigger photo take
+        document.getElementById("snap").addEventListener("click", function() {
+            context.drawImage(video, 0, 0, 640, 480);
+        });
+
+        document.getElementById("getBase").addEventListener("click", getBase());
+
+    }, false);                  
+
+    function getBase(){
+        var imgBase = canvas.toDataURL("image/png");
+
+        document.getElementById("textArea").value=imgBase;
+    }
+</script>`
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="width: 850px;">
+        <div style="float: right; width: 341px; margin-top: 10px;">         
+        <canvas id="canvas" width="540" height="320"></canvas>
+        </div>
+   
+
+        </div>
